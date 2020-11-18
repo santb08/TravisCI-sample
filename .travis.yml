@@ -4,7 +4,7 @@ node_js:
 jobs:
     include:
         - stage: Installing dependencies
-          script: "npm run i"
+          script: "npm install"
         - stage: Running lintj
           script: "npm run lintj"
         # - stage: Unit tests
