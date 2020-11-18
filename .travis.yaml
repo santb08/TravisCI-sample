@@ -1,0 +1,15 @@
+languaje: node_js
+node_js:
+  - lts/*
+jobs:
+    include:
+        - stage: Running lintj
+          script: "npm run lintj"
+        # - stage: Unit tests
+        #   script: "npm run test"
+        - stage: Deploying to Heroku
+          script: skip
+          deploy: &heroku
+            provider: heroku
+            app: tis-ci
+            api_key: 181c13d1-9a40-4700-9a34-00fa15b99031
