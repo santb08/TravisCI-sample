@@ -12,4 +12,4 @@ jobs:
           deploy: &heroku
             provider: heroku
             app: tis-ci
-            api_key: 181c13d1-9a40-4700-9a34-00fa15b99031
+            api_key: "181c13d1-9a40-4700-9a34-00fa15b99031"
