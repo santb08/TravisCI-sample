@@ -1,0 +1,16 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# npm
+/node_modules
+npm-debug.log*
+
+# generated folders
+/coverage
+/styleguide
+/build
+
+# generated files
+src/**/*.css
+
+# misc
+.DS_Store
