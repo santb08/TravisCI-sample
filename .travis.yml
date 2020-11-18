@@ -3,6 +3,8 @@ node_js:
   - lts/*
 jobs:
     include:
+        - stage: Installing dependencies
+          script: "npm run i"
         - stage: Running lintj
           script: "npm run lintj"
         # - stage: Unit tests

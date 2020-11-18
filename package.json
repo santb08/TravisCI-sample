@@ -6,7 +6,6 @@
   "dependencies": {
     "http-server": "^0.12.3",
     "lodash": "^4.17.20",
-    "serve": "^11.3.2",
     "start": "^5.1.0",
     "three": "^0.122.0"
   },
