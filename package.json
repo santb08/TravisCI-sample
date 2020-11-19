@@ -21,7 +21,7 @@
     "build": "webpack",
     "lintj": "./node_modules/.bin/eslint --ext .js ./src",
     "start": "npm run build && http-server ./dist -p $PORT",
-    "test": "jest ./tests/vectors"
+    "test": "jest ./tests"
   },
   "author": "",
   "license": "ISC"
