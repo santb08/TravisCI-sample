@@ -39,15 +39,14 @@ const left = 97;
 
 function onKeyPress(e) {
     let dir = 0;
-
+    const vel = 0.1;
     if (e.keyCode === right) {
         dir = 1;
     } else if (e.keyCode === left) {
         dir = -1;
     }
 
-    camera.position = cameraPosition(camera.position, new Vector3(dir, 0, 0));
-    requestAnimationFrame(animate);
+    mesh.position.setX(cameraPosition(mesh.position, new Vector3(dir * vel, 0, 0)).x);
 }
 
 init();
