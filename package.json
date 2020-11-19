@@ -21,7 +21,7 @@
     "build": "webpack",
     "lintj": "./node_modules/.bin/eslint --ext .js ./src",
     "start": "npm run build && http-server ./dist -p $PORT",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest ./tests/vectors"
   },
   "author": "",
   "license": "ISC"

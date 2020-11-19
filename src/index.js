@@ -2,6 +2,8 @@
 const { Vector3 } = require('three');
 const THREE = require('three');
 
+const { cameraPosition } = require('./utils');
+
 // @scripts
 const mouse = new THREE.Vector2();
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10);
@@ -24,17 +26,32 @@ function animate() {
     renderer.render(scene, camera);
     mesh.rotateOnWorldAxis(new Vector3(1, 0, 0), rotation.x);
     mesh.rotateOnWorldAxis(new Vector3(0, 0, 1), rotation.y);
-    mesh.rotateOnWorldAxis(new Vector3(0, 1, 0), 0.1);
 }
 
 function onMouseMove(event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    rotation.setX(THREE.Math.degToRad(10 * mouse.x));
-    rotation.setY(THREE.Math.degToRad(10 * mouse.y));
+    rotation.setY(THREE.Math.degToRad(3 * mouse.y));
+}
+
+const right = 100;
+const left = 97;
+
+function onKeyPress(e) {
+    let dir = 0;
+
+    if (e.keyCode === right) {
+        dir = 1;
+    } else if (e.keyCode === left) {
+        dir = -1;
+    }
+
+    camera.position = cameraPosition(camera.position, new Vector3(dir, 0, 0));
+    requestAnimationFrame(animate);
 }
 
 init();
 animate();
 
 window.addEventListener('mousemove', onMouseMove, false);
+window.addEventListener('keypress', onKeyPress, false);

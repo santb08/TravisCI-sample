@@ -7,8 +7,8 @@ jobs:
           script: "npm install"
         - stage: Running lintj
           script: "npm run lintj"
-        # - stage: Unit tests
-        #   script: "npm run test"
+        - stage: Unit tests
+          script: "npm run test"
         - stage: Deploying to Heroku
           script: skip
           deploy: &heroku
